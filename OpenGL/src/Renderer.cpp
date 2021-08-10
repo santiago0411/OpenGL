@@ -17,12 +17,17 @@ bool GLLogCall(const char* function, const char* file, int line)
     return true;
 }
 
-void Renderer::Clear() const
+void Renderer::SetBackgroundColor(const glm::vec4& color)
+{
+    GLCall(glClearColor(color.r, color.g, color.b, color.a));
+}
+
+void Renderer::Clear()
 {
     GLCall(glClear(GL_COLOR_BUFFER_BIT));
 }
 
-void Renderer::Draw(const VertexArray& va, const IndexBuffer& ib, const Shader& shader) const
+void Renderer::Draw(const VertexArray& va, const IndexBuffer& ib, const Shader& shader)
 {
     shader.Bind();
     va.Bind();

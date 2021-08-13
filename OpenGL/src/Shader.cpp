@@ -21,7 +21,7 @@ Shader::~Shader()
     GLCall(glDeleteProgram(m_RendererId));
 }
 
-ShaderProgramSource Shader::ParseShader(const std::string& filepath)
+ShaderProgramSource Shader::ParseShader(const std::string& filepath) const
 {
     std::ifstream stream(filepath);
 

@@ -22,10 +22,10 @@ void VertexArray::AddBuffer(const VertexBuffer& vb, const VertexBufferLayout& la
 	
 	for (unsigned int i = 0; i < elements.size(); i++)
 	{
-		const auto& element = elements[i];
+		const auto& [Type, Count, Normalized] = elements[i];
 		GLCall(glEnableVertexAttribArray(i));
-		GLCall(glVertexAttribPointer(i, element.Count, element.Type, element.Normalized, layout.GetStride(), (const void*)offset));
-		offset += element.Count * VertexBufferElement::GetSizeOfType(element.Type);
+		GLCall(glVertexAttribPointer(i, Count, Type, Normalized, layout.GetStride(), (const void*)offset));
+		offset += Count * VertexBufferElement::GetSizeOfType(Type);
 	}
 }
 

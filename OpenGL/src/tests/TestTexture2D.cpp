@@ -15,10 +15,11 @@ namespace Tests
 			m_TranslationA(200, 200, 0), m_TranslationB(400, 200, 0)
 	{
         float positions[] = {
-            100.0f, 100.0f, 0.0f, 0.0f, // 0 Bottom left
-            200.0f, 100.0f, 1.0f, 0.0f, // 1 Bottom right
-            200.0f, 200.0f, 1.0f, 1.0f, // 2 Top right 
-            100.0f, 200.0f, 0.0f, 1.0f, // 3 Top left
+            //    X,Y Position   // //   TEXT COORDS //
+            100.0f, 100.0f, 0.0f, 0.0f, // 0
+            200.0f, 100.0f, 1.0f, 0.0f, // 1
+            200.0f, 200.0f, 1.0f, 1.0f, // 2
+            100.0f, 200.0f, 0.0f, 1.0f // 3
         };
 
         unsigned int indices[] = {
